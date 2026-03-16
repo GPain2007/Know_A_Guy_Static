@@ -8,9 +8,13 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Oh I Know A Guy Website in the works! <br />
-          For detail quote feel free to contact us at: <br />
+          For a free estimate contact us at: <br />
           (737)259-5124 or{" "}
-          <a href="mailto:Javier@iknowaguy.com">Javier@iknowaguy.com</a>
+          <a href="mailto:I.knowaguy.lawn1@gmail.com">
+            I.knowaguy.lawn1@gmail.com
+          </a>{" "}
+          <br />
+          <span className="App-company">Oh..I KNOW A GUY! LLC</span>
         </p>
       </header>
     </div>

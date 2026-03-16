@@ -24,6 +24,11 @@
   color: white;
 }
 
+.App-company {
+  font-weight: bold;
+  font-style: italic;
+}
+
 .App-link {
   color: #61dafb;
 }
