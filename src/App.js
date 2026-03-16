@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./TrimLogo.png";
+import "./App.css";
 
 function App() {
   return (
@@ -7,16 +7,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Oh I Know A Guy Website in the works! <br />
+          For detail quote feel free to contact us at: <br />
+          (737)259-5124 or{" "}
+          <a href="mailto:Javier@iknowaguy.com">Javier@iknowaguy.com</a>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
