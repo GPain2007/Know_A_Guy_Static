@@ -1,0 +1,124 @@
+.services-section {
+  background: linear-gradient(180deg, #e29cb4 0%, #dcf9cf 100%);
+  padding: 5rem 2rem 4rem;
+  overflow: hidden;
+}
+
+.services-heading {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #2d5a27;
+  margin: 0 0 3rem;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.5);
+}
+
+/* ── Service Cards ── */
+.service-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.service-card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 20px;
+  padding: 2.2rem 1.8rem;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(45,90,39,0.12);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(45,90,39,0.2);
+}
+
+.service-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.service-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d5a27;
+  margin: 0 0 0.75rem;
+}
+
+.service-card-desc {
+  font-size: 0.95rem;
+  color: #4a3040;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Carousels ── */
+.carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+}
+
+.track-forward {
+  animation: scroll-left 22s linear infinite;
+}
+
+.track-reverse {
+  animation: scroll-right 22s linear infinite;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+.carousel-item {
+  width: 220px;
+  height: 140px;
+  border-radius: 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.75rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.carousel-label {
+  background: rgba(255,255,255,0.75);
+  color: #2d5a27;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}

@@ -1,0 +1,128 @@
+.form-section {
+  background: linear-gradient(160deg, #dcf9cf 0%, #e29cb4 100%);
+  padding: 5rem 2rem 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.75);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 560px;
+  box-shadow: 0 12px 40px rgba(45,90,39,0.15);
+}
+
+.form-heading {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: #2d5a27;
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+.form-subheading {
+  text-align: center;
+  color: #5a3a4a;
+  margin: 0 0 2rem;
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* shared Input component styles */
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.control label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #2d5a27;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.control input,
+.control textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(45,90,39,0.25);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.8);
+  color: #2d2d2d;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.control input:focus,
+.control textarea:focus {
+  border-color: #2d5a27;
+  box-shadow: 0 0 0 3px rgba(45,90,39,0.15);
+}
+
+.control-error p {
+  color: #c0392b;
+  font-size: 0.82rem;
+  margin: 0.2rem 0 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.form-submit {
+  margin-top: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: #2d5a27;
+  color: #dcf9cf;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 16px rgba(45,90,39,0.3);
+  transition: background 0.2s, transform 0.2s, opacity 0.2s;
+}
+
+.form-submit:hover:not(:disabled) {
+  background: #7a2a4a;
+  transform: translateY(-2px);
+}
+
+.form-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.form-success {
+  text-align: center;
+  color: #2d5a27;
+  font-weight: 700;
+  background: rgba(220,249,207,0.7);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin: 0;
+}
+
+.form-error-msg {
+  text-align: center;
+  color: #c0392b;
+  font-weight: 600;
+  background: rgba(255,220,220,0.7);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin: 0;
+}
