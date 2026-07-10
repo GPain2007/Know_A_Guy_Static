@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import Input from "./Input";
+import ServiceTypeRadio from "./ServiceTypeRadio";
 import { useInput } from "./userInput";
 import { isEmail, isNotEmpty, hasMinLength } from "./validation";
 import "./Form.css";
@@ -18,6 +19,8 @@ export const Form = () => {
   const email = useInput("", (v) => isEmail(v) && isNotEmpty(v));
   const phone = useInput("", (v) => hasMinLength(v.replace(/\D/g, ""), 7));
   const message = useInput("", (v) => hasMinLength(v, 10));
+  const [serviceType, setServiceType] = useState("one-time service");
+  const [Frequency, setFrequency] = useState("weekly");
 
   const isFormValid =
     !name.hasError &&
@@ -38,13 +41,15 @@ export const Form = () => {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         formRef.current,
-        EMAILJS_PUBLIC_KEY
+        EMAILJS_PUBLIC_KEY,
       );
       setStatus("sent");
       name.handleValuesChange({ target: { value: "" } });
       email.handleValuesChange({ target: { value: "" } });
       phone.handleValuesChange({ target: { value: "" } });
       message.handleValuesChange({ target: { value: "" } });
+      setServiceType("one-time service");
+      setFrequency("weekly");
     } catch {
       setStatus("error");
     }
@@ -58,7 +63,12 @@ export const Form = () => {
           Fill out the form below and we'll get back to you within 24 hours.
         </p>
 
-        <form ref={formRef} onSubmit={handleSubmit} className="contact-form" noValidate>
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className="contact-form"
+          noValidate
+        >
           <Input
             label="Full Name"
             id="name"
@@ -95,13 +105,35 @@ export const Form = () => {
             error={phone.hasError ? "Please enter a valid phone number." : ""}
           />
 
+          <ServiceTypeRadio
+            name="service_type"
+            value={serviceType}
+            onChange={(e) => setServiceType(e.target.value)}
+          />
+
+          {serviceType === "Longterm" && (
+            <div className="control no-margin">
+              <label htmlFor="frequency">Frequency</label>
+              <select
+                id="frequency"
+                name="frequency"
+                value={Frequency}
+                onChange={(e) => setFrequency(e.target.value)}
+              >
+                <option value="weekly">Weekly</option>
+                <option value="bi-weekly">Bi-Weekly</option>
+                <option value="monthly">Monthly</option>
+              </select>
+            </div>
+          )}
+
           <div className="control no-margin">
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">Project Details</label>
             <textarea
               id="message"
               name="message"
               rows={5}
-              placeholder="Tell us about your project..."
+              placeholder="Tell us what you're looking for..."
               value={message.value}
               onChange={message.handleValuesChange}
               onBlur={message.handleInputBlur}

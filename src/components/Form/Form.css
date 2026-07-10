@@ -1,8 +1,14 @@
 .form-section {
   background: linear-gradient(160deg, #dcf9cf 0%, #e29cb4 100%);
-  padding: 5rem 2rem 6rem;
+  padding: 3rem 1.25rem 4rem;
   display: flex;
   justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .form-section {
+    padding: 5rem 2rem 6rem;
+  }
 }
 
 .form-container {
@@ -10,10 +16,16 @@
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255,255,255,0.75);
   border-radius: 24px;
-  padding: 3rem 2.5rem;
+  padding: 2.5rem 1.5rem;
   width: 100%;
   max-width: 560px;
   box-shadow: 0 12px 40px rgba(45,90,39,0.15);
+}
+
+@media (min-width: 640px) {
+  .form-container {
+    padding: 3rem 2.5rem;
+  }
 }
 
 .form-heading {
@@ -53,7 +65,8 @@
 }
 
 .control input,
-.control textarea {
+.control textarea,
+.control select {
   padding: 0.75rem 1rem;
   border: 2px solid rgba(45,90,39,0.25);
   border-radius: 12px;
@@ -67,9 +80,39 @@
 }
 
 .control input:focus,
-.control textarea:focus {
+.control textarea:focus,
+.control select:focus {
   border-color: #2d5a27;
   box-shadow: 0 0 0 3px rgba(45,90,39,0.15);
+}
+
+.control select {
+  cursor: pointer;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2d2d2d;
+  text-transform: none;
+  letter-spacing: normal;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #2d5a27;
+  cursor: pointer;
 }
 
 .control-error p {

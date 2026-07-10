@@ -1,7 +1,13 @@
 .services-section {
   background: linear-gradient(180deg, #e29cb4 0%, #dcf9cf 100%);
-  padding: 5rem 2rem 4rem;
+  padding: 3rem 1.25rem 3rem;
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .services-section {
+    padding: 5rem 2rem 4rem;
+  }
 }
 
 .services-heading {
@@ -17,10 +23,17 @@
 /* ── Service Cards ── */
 .service-cards {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .service-cards {
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
 }
 
 .service-card {
@@ -28,11 +41,20 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.7);
   border-radius: 20px;
-  padding: 2.2rem 1.8rem;
-  width: 280px;
+  padding: 1.75rem 1.5rem;
+  width: 100%;
+  max-width: 280px;
   text-align: center;
   box-shadow: 0 8px 32px rgba(45,90,39,0.12);
   transition: transform 0.25s, box-shadow 0.25s;
+}
+
+@media (min-width: 640px) {
+  .service-card {
+    padding: 2.2rem 1.8rem;
+    width: 280px;
+    max-width: none;
+  }
 }
 
 .service-card:hover {
