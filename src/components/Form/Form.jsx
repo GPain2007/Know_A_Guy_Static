@@ -7,10 +7,10 @@ import { isEmail, isNotEmpty, hasMinLength } from "./validation";
 import "./Form.css";
 
 // Replace these with your actual EmailJS credentials
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
+const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 export const Form = () => {
   const formRef = useRef(null);
   const [status, setStatus] = useState(null); // null | "sending" | "sent" | "error"
