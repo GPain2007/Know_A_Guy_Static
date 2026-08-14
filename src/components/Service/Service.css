@@ -144,3 +144,47 @@
   border-radius: 20px;
   backdrop-filter: blur(4px);
 }
+
+/* ── Review Carousel Cards ── */
+.carousel-item-review {
+  width: 260px;
+  height: 180px;
+  align-items: stretch;
+  justify-content: stretch;
+  padding-bottom: 0;
+}
+
+.carousel-review-card {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+}
+
+.carousel-review-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2d5a27;
+  margin-bottom: 0.4rem;
+}
+
+.carousel-review-text {
+  flex: 1;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #4a3040;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.carousel-review-rating {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
