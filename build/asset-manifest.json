@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.c5b9ed48.css",
-    "main.js": "/static/js/main.783a5034.js",
+    "main.css": "/static/css/main.1b33f87b.css",
+    "main.js": "/static/js/main.3727d48f.js",
     "static/js/453.43baad32.chunk.js": "/static/js/453.43baad32.chunk.js",
-    "static/media/TrimLogo.png": "/static/media/TrimLogo.f9364e8f847d47f26f7a.png",
+    "static/media/Logo_2.png": "/static/media/Logo_2.de12c2f988cd399c75b4.png",
     "index.html": "/index.html",
-    "main.c5b9ed48.css.map": "/static/css/main.c5b9ed48.css.map",
-    "main.783a5034.js.map": "/static/js/main.783a5034.js.map",
+    "main.1b33f87b.css.map": "/static/css/main.1b33f87b.css.map",
+    "main.3727d48f.js.map": "/static/js/main.3727d48f.js.map",
     "453.43baad32.chunk.js.map": "/static/js/453.43baad32.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5b9ed48.css",
-    "static/js/main.783a5034.js"
+    "static/css/main.1b33f87b.css",
+    "static/js/main.3727d48f.js"
   ]
 }
