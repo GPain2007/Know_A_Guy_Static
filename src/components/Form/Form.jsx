@@ -8,12 +8,12 @@ import "./Form.css";
 
 // Replace these with your actual EmailJS credentials
 
-const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+// const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+// const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+// const public_key = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 export const Form = () => {
   const formRef = useRef(null);
-  const [status, setStatus] = useState(null); // null | "sending" | "sent" | "error"
+  const [status, setStatus] = useState(); // null | "sending" | "sent" | "error"
 
   const name = useInput("", (v) => isNotEmpty(v));
   const email = useInput("", (v) => isEmail(v) && isNotEmpty(v));
@@ -31,28 +31,40 @@ export const Form = () => {
     isNotEmpty(email.value) &&
     isNotEmpty(message.value);
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     if (!isFormValid) return;
     setStatus("sending");
-
-    try {
-      await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        EMAILJS_PUBLIC_KEY,
+    emailjs
+      .send(
+        "service_rzeq9lm",
+        "template_sx8aj2f",
+        {
+          name: name.value,
+          email: email.value,
+          phone: phone.value,
+          message: message.value,
+          serviceType,
+          Frequency,
+          time: new Date().toLocaleString(), // needed since {{time}} is in the template but wasn't in your object
+        },
+        "ScoN379N0W7BPhqC9",
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (error) => {
+          console.log("FAILED...", error);
+        },
       );
-      setStatus("sent");
-      name.handleValuesChange({ target: { value: "" } });
-      email.handleValuesChange({ target: { value: "" } });
-      phone.handleValuesChange({ target: { value: "" } });
-      message.handleValuesChange({ target: { value: "" } });
-      setServiceType("one-time service");
-      setFrequency("weekly");
-    } catch {
-      setStatus("error");
-    }
+    setStatus("sent");
+    name.handleValuesChange({ target: { value: "" } });
+    email.handleValuesChange({ target: { value: "" } });
+    phone.handleValuesChange({ target: { value: "" } });
+    message.handleValuesChange({ target: { value: "" } });
+    setServiceType("one-time service");
+    setFrequency("weekly");
   }
 
   return (
@@ -80,7 +92,6 @@ export const Form = () => {
             onBlur={name.handleInputBlur}
             error={name.hasError ? "Please enter your name." : ""}
           />
-
           <Input
             label="Email Address"
             id="email"
@@ -92,7 +103,6 @@ export const Form = () => {
             onBlur={email.handleInputBlur}
             error={email.hasError ? "Please enter a valid email." : ""}
           />
-
           <Input
             label="Telephone Number"
             id="phone"
@@ -104,13 +114,11 @@ export const Form = () => {
             onBlur={phone.handleInputBlur}
             error={phone.hasError ? "Please enter a valid phone number." : ""}
           />
-
           <ServiceTypeRadio
             name="service_type"
             value={serviceType}
             onChange={(e) => setServiceType(e.target.value)}
           />
-
           {serviceType === "Longterm" && (
             <div className="control no-margin">
               <label htmlFor="frequency">Frequency</label>
@@ -126,7 +134,6 @@ export const Form = () => {
               </select>
             </div>
           )}
-
           <div className="control no-margin">
             <label htmlFor="message">Project Details</label>
             <textarea
@@ -144,7 +151,6 @@ export const Form = () => {
               )}
             </div>
           </div>
-
           {status === "sent" && (
             <p className="form-success">
               Message sent! We'll be in touch soon.

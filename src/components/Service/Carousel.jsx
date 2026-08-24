@@ -7,7 +7,10 @@ const CarouselItem = ({ bg, label }) => (
 );
 
 const CarouselReviewItem = ({ bg, name, review, rating }) => (
-  <div className="carousel-item carousel-item-review" style={{ background: bg }}>
+  <div
+    className="carousel-item carousel-item-review"
+    style={{ background: bg }}
+  >
     <div className="carousel-review-card">
       <span className="carousel-review-name">{name}</span>
       <span className="carousel-review-text">{review}</span>
@@ -21,9 +24,11 @@ export const Carousel = () => {
     <div className="carousel-wrapper">
       <div className="carousel carousel-left">
         <div className="carousel-track track-forward">
-          {[...CAROUSEL_LEFT, ...CAROUSEL_LEFT].map((item, i) => (
-            <CarouselItem key={i} {...item} />
-          ))}
+          {[...CAROUSEL_LEFT, ...CAROUSEL_LEFT, ...CAROUSEL_LEFT].map(
+            (item, i) => (
+              <CarouselItem key={i} {...item} />
+            ),
+          )}
         </div>
       </div>
 

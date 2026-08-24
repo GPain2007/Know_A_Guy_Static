@@ -15,8 +15,8 @@ export const Header = () => {
             (737) 259-5124
           </a>
           <span className="header-divider">|</span>
-          <a href="mailto:I.knowaguy.lawn1@gmail.com" className="header-email">
-            I.knowaguy.lawn1@gmail.com
+          <a href="mailto:oiknowaguy@gmail.com" className="header-email">
+            oiknowaguy@gmail.com
           </a>
         </div>
         <a href="#contact" className="header-cta">
