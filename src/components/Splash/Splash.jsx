@@ -52,7 +52,7 @@ export const Splash = () => {
     // Safety timeout: always leave splash even if media events do not fire.
     const fallbackTimer = window.setTimeout(() => {
       dismiss();
-    }, 3500);
+    }, 6000);
 
     return () => {
       window.clearTimeout(fallbackTimer);
