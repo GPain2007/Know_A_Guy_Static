@@ -25,10 +25,42 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Oh I Know A Guy</title>
+    <style>
+      /* Pre-mount preloader: shown until React renders, avoids a white flash
+         before <Splash /> takes over. */
+      html,
+      body {
+        background: #000;
+      }
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+      }
+      #initial-loader::after {
+        content: "";
+        width: 44px;
+        height: 44px;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: initial-spin 0.8s linear infinite;
+      }
+      @keyframes initial-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div id="initial-loader"></div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
