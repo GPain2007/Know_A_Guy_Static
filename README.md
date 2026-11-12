@@ -80,7 +80,7 @@ Form submissions go to the owner's inbox through an EmailJS service and template
 
 GitHub Actions (`.github/workflows/ci.yml`) runs on every push and pull request to `main`. It also runs on a **weekly schedule (Mondays)**, so a broken dependency or an expired service shows up even when nobody is pushing code. Each run:
 
-1. Installs dependencies with `npm ci`
+1. Installs dependencies (`npm install` until the lockfile is regenerated, then `npm ci`)
 2. Runs all tests once (`npm run test:ci`)
 3. Builds the production site and uploads it as an artifact
 
