@@ -102,8 +102,10 @@ Open problems are tracked in [GitHub Issues](https://github.com/GPain2007/Know_A
 
 - The estimate form shows "Message sent!" immediately, even if EmailJS fails, so a customer may think they reached you when they didn't.
 - The compiled `build/` folder is committed to the repo and is out of date with the source.
+- `package-lock.json` is out of sync with `package.json`, so CI uses `npm install` instead of `npm ci` until the lockfile is regenerated and committed.
 
 ## Recent changes
 
 <!-- Maintained by the weekly review task. Newest first. -->
+- **2026-11-12:** CI switched to `npm install` because `package-lock.json` is out of sync (missing `yaml@2.x`); switch back to `npm ci` once the lockfile is regenerated.
 - **2026-11-12:** Rewrote README; replaced the default CRA test with real tests; added a GitHub Actions workflow (push, PR and weekly schedule).
