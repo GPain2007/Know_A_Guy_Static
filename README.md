@@ -107,5 +107,6 @@ Open problems are tracked in [GitHub Issues](https://github.com/GPain2007/Know_A
 ## Recent changes
 
 <!-- Maintained by the weekly review task. Newest first. -->
+- **2026-11-16:** README Known issues now notes the `package-lock.json` / `npm install` CI workaround (PR #12). No code changes this week.
 - **2026-11-12:** CI switched to `npm install` because `package-lock.json` is out of sync (missing `yaml@2.x`); switch back to `npm ci` once the lockfile is regenerated.
 - **2026-11-12:** Rewrote README; replaced the default CRA test with real tests; added a GitHub Actions workflow (push, PR and weekly schedule).
